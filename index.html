@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hami MiniMarket - Fresh. Local. Trusted.</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header with Logo and Navigation -->
     <header>
@@ -17,81 +19,90 @@
             <button class="mobile-menu-btn">☰</button>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-section="products">Products</a></li>
+                    <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                    <li class="cart-icon">
+                        🛒 <span class="cart-count">0</span>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- Home Section -->
+    <section id="home" class="page-section active">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container">
+                <h1>Fresh. Local. Trusted.</h1>
+                <p>Your neighborhood destination for the freshest fruits and vegetables, sourced directly from local farmers.</p>
+                <a href="#" class="btn nav-link" data-section="products">Explore Our Products</a>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
         <div class="container">
-            <h1>Fresh. Local. Trusted.</h1>
-            <p>Your neighborhood destination for the freshest fruits and vegetables, sourced directly from local farmers.</p>
-            <a href="#products" class="btn">Explore Our Products</a>
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Featured products will be dynamically inserted here -->
+            </div>
         </div>
     </section>
 
+
     <!-- Products Section -->
-    <section id="products">
+    <section id="products" class="page-section">
         <div class="container">
-            <h2 class="section-title">Our Fresh Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p1.jpeg')"></div>
-                    <div class="product-info">
-                        <h3>Fresh Apples</h3>
-                        <p>Crisp and juicy apples, perfect for snacking or baking.</p>
+            <h1 class="section-title">Our Fresh Products</h1>
+            
+            <!-- Filters Section -->
+            <div class="filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="search">Search Products</label>
+                        <input type="text" id="search" class="search-input" placeholder="Search by name...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="category">Category</label>
+                        <select id="category" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="vegetables">Vegetables</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price">Max Price: $<span id="price-value">10</span></label>
+                        <div class="price-range">
+                            <span>$0</span>
+                            <input type="range" id="price" class="price-input" min="0" max="20" value="10" step="1">
+                            <span>$20</span>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p5.avif')"></div>
-                    <div class="product-info">
-                        <h3>Organic Tomatoes</h3>
-                        <p>Vine-ripened organic tomatoes with rich flavor.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p2.avif')"></div>
-                    <div class="product-info">
-                        <h3>Leafy Greens</h3>
-                        <p>Fresh spinach, kale, and lettuce for your salads.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p3.jpeg')"></div>
-                    <div class="product-info">
-                        <h3>Seasonal Berries</h3>
-                        <p>Sweet and tangy berries packed with antioxidants.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p4.jpeg')"></div>
-                    <div class="product-info">
-                        <h3>Fresh Carrots</h3>
-                        <p>Sweet and crunchy carrots, perfect for cooking or snacking.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('assets/p3.avif')"></div>
-                    <div class="product-info">
-                        <h3>Citrus Fruits</h3>
-                        <p>Vitamin C rich oranges, lemons, and grapefruits.</p>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results">
+                <h2>No products found</h2>
+                <p>Try adjusting your search or filter criteria</p>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section id="about" class="page-section">
         <div class="container">
+            <h1 class="section-title">About Hami MiniMarket</h1>
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Hami MiniMarket</h2>
+                    <h2>Our Story</h2>
                     <p>Hami MiniMarket is your friendly neighborhood shop dedicated to providing the freshest fruits and vegetables to our community. We believe in supporting local farmers and bringing you produce that's not only delicious but also sustainably grown.</p>
                     <p>Our mission is to make healthy eating accessible and enjoyable for everyone. We carefully select our products to ensure they meet our high standards for quality, freshness, and taste.</p>
                     <p>Visit us today and experience the difference that fresh, locally-sourced produce can make in your meals!</p>
@@ -102,9 +113,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="page-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h1 class="section-title">Get In Touch</h1>
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
@@ -178,4 +189,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
