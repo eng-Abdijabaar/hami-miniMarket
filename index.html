@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hami MiniMarket - Fresh. Local. Trusted.</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 
+</head>
 <body>
     <!-- Header with Logo and Navigation -->
     <header>
@@ -23,13 +22,36 @@
                     <li><a href="#" class="nav-link" data-section="products">Products</a></li>
                     <li><a href="#" class="nav-link" data-section="about">About</a></li>
                     <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
-                    <li class="cart-icon">
+                    <li class="cart-icon" id="cart-icon">
                         🛒 <span class="cart-count">0</span>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">×</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary" id="cart-summary">
+                <!-- Cart summary will be dynamically inserted here -->
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay for cart sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Product added to cart!</div>
 
     <!-- Home Section -->
     <section id="home" class="page-section active">
@@ -50,7 +72,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Products Section -->
     <section id="products" class="page-section">
@@ -139,6 +160,16 @@
         </div>
     </section>
 
+    <!-- Order Summary Section -->
+    <section id="order-summary" class="page-section">
+        <div class="container">
+            <h1 class="section-title">Order Summary</h1>
+            <div class="order-summary" id="order-summary-content">
+                <!-- Order summary will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -187,7 +218,6 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top">↑</a>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
